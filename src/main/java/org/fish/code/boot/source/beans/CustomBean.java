@@ -10,7 +10,7 @@ import lombok.Data;
 
 @Data
 public class CustomBean {
-    private String name;
+    private String name = "name1";
     private int age;
     
 }

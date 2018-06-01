@@ -1,5 +1,6 @@
-package org.fish.code.boot.source.beans;
+package org.fish.code.boot.source.beans.factorybean;
 
+import org.fish.code.boot.source.beans.CustomBean;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class CustomBeanTest {

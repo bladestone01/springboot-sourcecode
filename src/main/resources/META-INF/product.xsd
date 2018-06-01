@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.digdata.top/schema/product"
+	xmlns:tns="http://www.digdata.top/schema/product"
+	elementFormDefault="qualified">
+	<element name="product">
+		<complexType>
+		    <attribute name="id" type="string"></attribute>
+			<attribute name="price" type="float"></attribute>
+			<attribute name="pname" type="string" ></attribute>
+			<attribute name="count" type="int"></attribute>
+		</complexType>
+	</element>
+</schema>
