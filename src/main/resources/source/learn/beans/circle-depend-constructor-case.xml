@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="mountainBean" class="org.fish.code.boot.source.beans.circledepend.Mountain">
+        <constructor-arg index="0" ref="monkBean"></constructor-arg>
+    </bean>
+    
+    <bean id="templeBean" class="org.fish.code.boot.source.beans.circledepend.Temple">
+        <constructor-arg index="0" ref="mountainBean"></constructor-arg>
+    </bean>
+    
+    <bean id="monkBean" class="org.fish.code.boot.source.beans.circledepend.Monk">
+        <constructor-arg index="0" ref="templeBean"></constructor-arg>
+    </bean>
+</beans>
