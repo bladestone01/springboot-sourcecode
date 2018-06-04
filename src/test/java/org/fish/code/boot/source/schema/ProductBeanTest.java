@@ -20,7 +20,7 @@ public class ProductBeanTest {
 
 	@Test
 	public void testCustomSchema() {
-		ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("classpath*:source/learn/config/schema/custom-bean.xml");
+		ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("classpath*:source/learn/schema/custom-bean.xml");
 		Product product = (Product)context.getBean("pproduct");
 		
 		System.out.println("Object Info:" + ReflectionToStringBuilder.toString(product));
