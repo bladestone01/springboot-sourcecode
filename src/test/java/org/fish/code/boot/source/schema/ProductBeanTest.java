@@ -20,7 +20,7 @@ public class ProductBeanTest {
 
 	@Test
 	public void testCustomSchema() {
-		ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("classpath*:source/learn/config/schema/custom-bean.xml");
+		ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("classpath*:source/learn/schema/custom-bean.xml");
 		Product product = (Product)context.getBean("pproduct");
 		
 		System.out.println("Object Info:" + ReflectionToStringBuilder.toString(product));
@@ -28,4 +28,19 @@ public class ProductBeanTest {
 		context.close();
 	}
 
+	
+	@Test
+	public void testFloatString() {
+		String floatStr = "10.5";
+		
+		String pattern = "-?\\\\d+(\\\\.\\\\d+)";
+		
+		if (floatStr.matches(pattern)) {
+			System.out.println("Float:" + true);
+		}
+		else 
+			System.out.println("Float:" + false);
+	}
+	
+	
 }

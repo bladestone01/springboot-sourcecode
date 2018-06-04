@@ -16,8 +16,8 @@ public class ProductBeanDefinitionParser extends AbstractSingleBeanDefinitionPar
 	private static final String PRICE_ATTR = "price";
 	private static final String COUNT_ATTR = "count";
 
-	private static final String FLOAT_PATTERN = "-?\\\\d+(\\\\.\\\\d+)";
-	private static final String INT_PATTERN = "\\\\d+";
+	private static final String FLOAT_PATTERN = "\\+{0,1}[0]\\.[1-9]*|\\+{0,1}[1-9]\\d*\\.\\d*";
+	private static final String INT_PATTERN = "^\\+?[1-9]\\d*";
 
 	@Override
 	protected Class<?> getBeanClass(Element element) {
@@ -38,7 +38,7 @@ public class ProductBeanDefinitionParser extends AbstractSingleBeanDefinitionPar
             builder.addPropertyValue(PRICE_ATTR, Float.parseFloat(priceStr));
 		}
 		 
-		if (StringUtils.hasText(priceStr) && priceStr.matches(INT_PATTERN)) {
+		if (StringUtils.hasText(countStr) && countStr.matches(INT_PATTERN)) {
 			builder.addPropertyValue(COUNT_ATTR, Float.parseFloat(countStr));
 		}
 	}
