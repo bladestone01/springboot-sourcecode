@@ -8,6 +8,11 @@ import org.junit.Test;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+/**
+ * Reference: https://www.logicbig.com/tutorials/spring-framework/spring-core/property-editors.html
+ * @author chenjunfeng1
+ *
+ */
 public class CustomEditorTest {
 
 	@Before

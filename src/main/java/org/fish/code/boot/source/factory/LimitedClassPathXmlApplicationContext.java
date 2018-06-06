@@ -6,7 +6,6 @@ import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.lang.Nullable;
 
 /**
  * Restraint on the accesiable Parent ApplicationContext.
@@ -30,7 +29,7 @@ public class LimitedClassPathXmlApplicationContext extends ClassPathXmlApplicati
         this.refresh();
 	}
 	
-	public LimitedClassPathXmlApplicationContext(String[] configLocations, @Nullable ApplicationContext parent) {
+	public LimitedClassPathXmlApplicationContext(String[] configLocations, ApplicationContext parent) {
 		super(configLocations,true, parent);
 	}
 	

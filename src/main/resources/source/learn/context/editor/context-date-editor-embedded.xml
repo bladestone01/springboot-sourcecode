@@ -14,12 +14,7 @@
     <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
         <property name="customEditors">
             <map>
-               <entry key="java.util.Date">
-                <value>
-                   <bean class="org.fish.code.boot.source.context.editor.DatePropertyEditor">
-                       <property name="format" value="yyyy-MM-dd"></property>
-                   </bean>
-                   </value>
+                <entry key="java.util.Date" value="org.fish.code.boot.source.context.editor.DatePropertyEditor">
                </entry>
             </map>
         </property>

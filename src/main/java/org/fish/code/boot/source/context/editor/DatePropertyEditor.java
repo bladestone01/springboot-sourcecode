@@ -6,9 +6,9 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 
-@Log4j2
+@Slf4j
 public class DatePropertyEditor extends PropertyEditorSupport {
     private String format = "yyyy-MM-dd";
     
@@ -24,6 +24,8 @@ public class DatePropertyEditor extends PropertyEditorSupport {
     	
     	LocalDate date = LocalDate.parse(text, formatter);
         Date newDate = Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        
+        
         this.setValue(newDate);
     }
 }
