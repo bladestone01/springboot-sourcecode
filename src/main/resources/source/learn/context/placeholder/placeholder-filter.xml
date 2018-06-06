@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="userprofile"
+		class="org.fish.code.boot.source.context.placeholder.UserProfile">
+		<property name="userName" value="123456"></property>
+		<property name="hobbies" value="Hate,Happiness"></property>
+		<property name="password" value="qwe123"></property>
+	</bean>
+
+	<bean id="customFilter"
+		class="org.fish.code.boot.source.context.placeholder.FilterPropertyBeanFactoryPostProcessor">
+		<property name="filteredProperties">
+			<set>
+				<value>Hate</value>
+				<value>qwe123</value>
+				<value>testabc</value>
+			</set>
+		</property>
+	</bean>
+</beans>
