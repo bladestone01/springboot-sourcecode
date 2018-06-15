@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="off">
+    <properties>
+        <property name="LOG_PATH">/export/Logs/springcode</property>
+    </properties>
+
+    <appenders>
+        <!-- Console -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %logger{36}.%M@%L - %msg%n"/>
+            <!--<PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %C{5} (%F:%L) - %msg%n"/>-->
+        </Console>
+        <!-- RollingFile -->
+        <RollingRandomAccessFile name="RollingFile"
+                                 fileName="${LOG_PATH}/springcode.log"
+                                 filePattern="${LOG_PATH}/springcode.log.%d{yyyy-MM-dd-HH}">
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{36}.%M@%L - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+            <DefaultRolloverStrategy max="30"/>
+        </RollingRandomAccessFile>
+    </appenders>
+
+    <loggers>
+        <!-- Spring Loggers -->
+        <logger name="org.springframework" level="info"/>
+
+        <!-- App Loggers -->
+        <logger name="org.fish.code" level="debug" additivity="false">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="RollingFile"/>
+        </logger>
+
+        <!-- Root Logger -->
+        <root level="info">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="RollingFile"/>
+        </root>
+    </loggers>
+</configuration>
